@@ -7,7 +7,7 @@ package stack;
 public class Calculator {
     public static void main(String[] args) {
         //根据思路，完成表达式的运算
-        String expression = "3+2*6-2";
+        String expression = "30+2*6-2";
         //创建两个栈，一个是数字栈，一个是符号栈
         ArrayStack2 numStack = new ArrayStack2(10);
         ArrayStack2 operStack = new ArrayStack2(10);
@@ -17,6 +17,7 @@ public class Calculator {
         int oper = 0;//操作符
         int res = 0;//结果
         char ch = ' ';//将每次扫描得到的char保存到ch中
+        String keepNum = "";//用于拼接多位数
         while(true){
             //依次得到expression中的每一个字符
             ch = expression.substring(index, index + 1).charAt(0);
@@ -40,7 +41,21 @@ public class Calculator {
                     operStack.push(ch);//栈为空，直接入栈
                 }
             }else{//如果是数字，直接入数字栈
-                numStack.push(ch - 48);
+                //numStack.push(ch - 48);
+                //当发现一个数字的时候不能立即入栈，也可能是两位数字,要多看一位
+                keepNum += ch;
+                //如果ch是字符串最后一位，
+                if(index == expression.length() - 1){
+                    numStack.push(Integer.parseInt(keepNum));
+                }else{
+                    //判断下一位是不是数字,如果是数字，继续扫描,如果是运算符。。。
+                    if(operStack.isOper(expression.substring(index + 1, index + 2).charAt(0))){
+                        //如果是运算符，则入栈
+                        numStack.push(Integer.parseInt(keepNum));
+                        //将keepNum清空
+                        keepNum = "";
+                    }
+                }
             }
             //让index+1,并判断是否扫描到最后
             index++;
