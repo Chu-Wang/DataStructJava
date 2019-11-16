@@ -54,7 +54,7 @@ class CircleLinkedList{
 	//出圈，根据用户的输入，计算出出圈的顺序
 	/**
 	 * 
-	 * @param satrtNo : 表示从第几个小孩开始数
+	 * @param startNo : 表示从第几个小孩开始数
 	 * @param countNum : 表示数几下
 	 * @param nums : 表示最初有多少个小孩
 	 */
@@ -115,3 +115,6 @@ class Boy{
 	}
 	
 }
+/**
+ * 新添加一行，用来测试github是否正常
+ */
