@@ -15,10 +15,10 @@ import java.util.Date;
 public class ShellSort {
     public static void main(String[] args) {
         int[] arr = {8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
-        shellSort(arr);
+        shellSortNew(arr);
         System.out.println(Arrays.toString(arr));
         //测试大量数据耗时
-        int[] array = new int[80000];
+        int[] array = new int[800000];
         for(int i = 0; i < 80000; i++){
             array[i] = (int)(Math.random() * 80000);
         }

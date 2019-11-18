@@ -11,6 +11,7 @@ public class Josepfu {
 		//≤‚ ‘–°∫¢≥ˆ»¶
 		circleLinkedList.countBoy(1, 2, 5);
 		circleLinkedList.showBoy();
+		System.out.println("dfghddd");
 	}
 
 
