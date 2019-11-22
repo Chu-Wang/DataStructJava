@@ -19,6 +19,11 @@
 ``分治算法``里面是汉诺塔问题
 ### dynamic
 ``dynamic``背包问题
+### search
+``search`` 二分查找
+### hashtab
+``hashtab`` 哈希表实现
+
 **持续更新**
 
 > 小贴士： 如有误，请指正！
